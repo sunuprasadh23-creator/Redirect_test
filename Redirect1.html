@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>6-Hop Redirect Test</title>
+  <script type="text/javascript">
+    // List of 6 neutral redirect URLs + final target
+    const redirects = [
+      "https://example.com/redirect1.html",
+      "https://example.com/redirect2.html",
+      "https://example.com/redirect3.html",
+      "https://example.com/redirect4.html",
+      "https://example.com/redirect5.html",
+      "https://www.eicar.org/download/eicar.com.txt/" // final destination
+    ];
+
+    let index = 0;
+
+    function redirectNext() {
+      if (index < redirects.length) {
+        window.location.href = redirects[index];
+        index++;
+      }
+    }
+
+    // Redirect every 1 second automatically
+    setInterval(redirectNext, 1000);
+  </script>
+</head>
+<body>
+  <h2>Redirecting through 6 hops to Safe Browsing Test Page...</h2>
+  <p>If nothing
